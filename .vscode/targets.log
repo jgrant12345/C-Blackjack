@@ -6,12 +6,14 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Tue Jun  7 20:13:05 2022
+# Make data base, printed on Wed Jun  8 23:11:34 2022
 
 # Variables
 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -118,6 +120,7 @@ USER = justin
 # environment
 CONDA_SHLVL = 1
 # default
+ 
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # default
 .VARIABLES := 
@@ -178,7 +181,7 @@ _CE_CONDA =
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=83/1024=8%, Rehash=0, Collisions=2/107=2%
+# Load=83/1024=8%, Rehash=0, Collisions=2/109=2%
 
 # Pattern-specific Variable Values
 
@@ -186,9 +189,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777231, inode 51637614): 14 files, no impossibilities.
+# . (device 16777231, inode 51637614): 15 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -196,19 +199,31 @@ LANG = C
 
 # Files
 
+ 
+Deck.o: Deck.cpp Deck.hpp
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-08 23:04:46
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 8):
+	clang++ -c -o Deck.o Deck.cpp -Wall -Wextra -pedantic -std=c++1z
+	
+
 all: Game
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
 
 # Not a target:
 Card.hpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-03 23:12:43
+#  Last modified 2022-06-08 22:37:20
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -217,7 +232,7 @@ Card.hpp:
 # Not a target:
 Game.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-03 23:17:12
+#  Last modified 2022-06-08 23:04:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -232,7 +247,7 @@ Game.cpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-03 23:13:57
+#  Last modified 2022-06-08 23:04:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -240,14 +255,23 @@ Makefile:
 
 Card.o: Card.cpp Card.hpp
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-03 23:13:57
+#  Last modified 2022-06-08 22:37:20
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 7):
+#  commands to execute (from `Makefile', line 5):
 	clang++ -c -o Card.o Card.cpp -Wall -Wextra -pedantic -std=c++1z
 	
+
+# Not a target:
+Deck.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-08 22:34:17
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .DEFAULT:
@@ -255,25 +279,42 @@ Card.o: Card.cpp Card.hpp
 #  Modification time never checked.
 #  File has not been updated.
 
-Game: Game.o Card.o
+Game: Game.o Card.o Deck.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-03 23:17:13
+#  Implicit/static pattern stem: `'
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := Game
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := Game.o Card.o Deck.o
+# automatic
+# | := 
+# automatic
+# < := Game.o
+# automatic
+# ^ := Game.o Card.o Deck.o
+# automatic
+# ? := Game.o Card.o Deck.o
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 10):
-	clang++ -o Game Game.o Card.o -Wall -Wextra -pedantic -std=c++1z
+# Load=8/32=25%, Rehash=0, Collisions=1/10=10%
+#  commands to execute (from `Makefile', line 14):
+	clang++ -o Game Game.o Card.o Deck.o -Wall -Wextra -pedantic -std=c++1z
 	
 
 Game.o: Game.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-03 23:17:12
+#  Last modified 2022-06-08 23:04:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 4):
+#  commands to execute (from `Makefile', line 11):
 	clang++ -c -o Game.o Game.cpp -Wall -Wextra -pedantic -std=c++1z
 	
 
@@ -281,9 +322,18 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 13):
+#  commands to execute (from `Makefile', line 17):
 	rm -rf *.o test
 	
+
+# Not a target:
+Deck.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-08 23:04:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 Card.cpp:
@@ -295,7 +345,7 @@ Card.cpp:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/30=0%
+# Load=14/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -307,7 +357,6 @@ Card.cpp:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
- 
-# Finished Make data base on Tue Jun  7 20:13:05 2022
+# Finished Make data base on Wed Jun  8 23:11:34 2022
 
  
