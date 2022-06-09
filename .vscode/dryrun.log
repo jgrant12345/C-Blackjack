@@ -1,5 +1,7 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/justin/Desktop/Coding/CPlusPlusBlackjack'
-make: Nothing to be done for `all'.
+clang++ -c -o Game.o Game.cpp -Wall -Wextra -pedantic -std=c++1z
+clang++ -c -o Card.o Card.cpp -Wall -Wextra -pedantic -std=c++1z
+clang++ -o Game Game.o Card.o -Wall -Wextra -pedantic -std=c++1z
 make: Leaving directory `/Users/justin/Desktop/Coding/CPlusPlusBlackjack'
  
