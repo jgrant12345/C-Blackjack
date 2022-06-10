@@ -6,3 +6,7 @@ Card::Card(int myValue, Suit myCardSuit ){
   value = myValue;
   CardSuit = myCardSuit;
 }
+
+Card::Card(){
+
+}

@@ -5,13 +5,8 @@
 
 using namespace std;
 int main(){
-    Card mycard = Card(1, Heart);
-    // cout << mycard.value;
-    // Deck mydeck = Deck();
-    Deck myDeck = Deck();
-    Deck::Create_deck();
-    return 0;
-
+    Deck myDeck;
+    std::cout << myDeck.deck_of_cards[0].CardSuit;
 }
 
 

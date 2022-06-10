@@ -12,4 +12,5 @@ public:
     int value;
     Suit CardSuit;
     Card(int myValue, Suit myCardSuit);
+    Card();
 };
